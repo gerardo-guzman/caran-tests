@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const weatherRoutes = require("../routes/weather.routes");
+const dateRoutes = require("../routes/dates.routes");
 
 class ServerCore {
 
@@ -26,6 +27,7 @@ class ServerCore {
     routes() {
         // the crazy routes
         this.app.use('/api/v1.0/weather', weatherRoutes);
+        this.app.use('/api/v1.0/dates', dateRoutes);
     }
 
     listen() {
